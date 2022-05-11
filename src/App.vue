@@ -1,6 +1,6 @@
 <template>
-  <el-button type="primary" size="small" @click="open">测试</el-button>
-
+  <!-- 命名视图 -->
+  <router-view name="routerNav"></router-view>
   <router-view></router-view>
 </template>
 <script setup lang="ts">
@@ -9,17 +9,7 @@ import { onMounted } from 'vue-demi'
 const open = () => {
   ElMessage({ message: '测试' })
 }
-onMounted(() => {
-  setTimeout(() => {
-    ElMessage({ message: '1', duration: 0 })
-  }, 0)
-  setTimeout(() => {
-    ElMessage.warning('2')
-  }, 0)
-  setTimeout(() => {
-    ElMessage({ message: '3', duration: 0 })
-  }, 0)
-})
+onMounted(() => {})
 </script>
 
 <style></style>

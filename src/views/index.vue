@@ -1,26 +1,32 @@
 <template>
   <div class="router-nav">
-    <ul>
-      <transition-group>
-        <li v-for="(item) in routes" :key="item.path">
-          {{item.des}}
-        </li>
-      </transition-group>
-    </ul>
+    <TransitionGroup>
+      <router-link v-for="item in routesFilter" :key="item.path" :to="item.path">
+        {{ item.des }}
+      </router-link>
+    </TransitionGroup>
   </div>
 </template>
 
 <script lang="ts" setup>
-console.log(routes)
+import { routes } from '@/router'
+
+const routesFilter = routes.filter(item => !item.components)
+
+// console.log(routes, routesFilter)
 </script>
 
 <script lang="ts">
-import { routes } from '@/router'
-
 export default {
-  name: '',
+  name: 'RouterNav',
 }
 </script>
 
 <style lang="scss" scoped>
+.router-nav {
+  > a {
+    margin: 5px 10px;
+    text-decoration: underline;
+  }
+}
 </style>

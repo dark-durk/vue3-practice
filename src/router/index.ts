@@ -22,6 +22,11 @@ const routes: Array<RouteRecordRawWrap> = [
       routerNav: () => import('@/views/index.vue'),
     },
   },
+  {
+    path: '/dom-attrs',
+    des: 'tabindex',
+    component: () => import('@/views/domAttrs/TestTabindex.vue'),
+  },
 ]
 
 const router = createRouter({

@@ -10,6 +10,7 @@ import { resolve } from 'path'
 export default defineConfig(({ mode }: ConfigEnv) => {
   const env = loadEnv(mode, process.cwd())
   return {
+    hmr: true,
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src'),
@@ -29,6 +30,15 @@ export default defineConfig(({ mode }: ConfigEnv) => {
           },
           rewrite: path => path.replace(/^\/api/, ''),
         },
+      },
+    },
+    css: {
+      // 解决 warning: "@charset" must be the first rule in the file 的警告
+      preprocessorOptions: {
+        // scss: {
+        //   charset: false,
+        //   additionalData: '@import "@/styles/global.scss";',
+        // },
       },
     },
     plugins: [

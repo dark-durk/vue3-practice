@@ -11,6 +11,9 @@ interface MyParams {
 }
 type RouteRecordRawWrap = Merge<MyParams, RouteRecordRaw>
 
+const DomAttrsIndex = () => import('@/views/domAttrs/index.vue')
+const CssAttrsIndex = () => import('@/views/cssAttrs/index.vue')
+
 // 配置路由信息
 const routes: Array<RouteRecordRawWrap> = [
   { path: '/login', des: '登录', component: () => import('@/views/login/index.vue') },
@@ -19,13 +22,32 @@ const routes: Array<RouteRecordRawWrap> = [
     path: '/:pathMatch(.*)',
     des: '路由导航',
     components: {
-      routerNav: () => import('@/views/index.vue'),
+      routerNav: () => import('@/views/login/index.vue'),
     },
   },
   {
     path: '/dom-attrs',
-    des: 'tabindex',
-    component: () => import('@/views/domAttrs/TestTabindex.vue'),
+    des: 'dom属性',
+    component: DomAttrsIndex,
+    children: [
+      {
+        path: '/dom-attrs/tabindex',
+        component: () => import('@/views/domAttrs/TestTabindex.vue'),
+        des: 'tabindex属性',
+      },
+    ],
+  },
+  {
+    path: '/css-attrs',
+    des: 'css属性',
+    component: CssAttrsIndex,
+    children: [
+      {
+        path: '/css-attrs/shape-outside',
+        component: () => import('@/views/cssAttrs/TestShapeOutside.vue'),
+        des: 'shape-outside',
+      },
+    ],
   },
 ]
 

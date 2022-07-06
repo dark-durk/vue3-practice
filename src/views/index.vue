@@ -49,16 +49,7 @@ export default {
     left: 0;
     white-space: nowrap;
     padding-bottom: 10px;
-    &:hover {
-      display: block;
-    }
-    &::before {
-      content: '';
-      width: 100%;
-      height: 10px;
-      position: absolute;
-      top: -5px;
-    }
+    z-index:999;
   }
   .module-name:hover {
     .module-children {

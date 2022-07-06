@@ -52,6 +52,11 @@ const routes: Array<RouteRecordRawWrap> = [
         component: () => import('@/views/cssAttrs/TestIrregularShape.vue'),
         des: '不规则图形绘制',
       },
+      {
+        path: '/css-attrs/black-white-fish',
+        component: () => import('@/views/cssAttrs/BlackWhiteFish.vue'),
+        des: '太极黑白鱼',
+      },
     ],
   },
 ]

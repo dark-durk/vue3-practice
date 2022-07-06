@@ -47,6 +47,11 @@ const routes: Array<RouteRecordRawWrap> = [
         component: () => import('@/views/cssAttrs/TestShapeOutside.vue'),
         des: 'shape-outside',
       },
+      {
+        path: '/css-attrs/irregular-shape',
+        component: () => import('@/views/cssAttrs/TestIrregularShape.vue'),
+        des: '不规则图形绘制',
+      },
     ],
   },
 ]

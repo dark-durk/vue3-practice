@@ -25,7 +25,8 @@
       ],
       "cpns/*": [
         "src/components/*"
-      ]
+      ],
+      "types/*":["types/*"]
     }
   },
   "include": [

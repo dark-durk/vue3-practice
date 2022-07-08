@@ -1,21 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import type { RouteRecordRaw } from 'vue-router'
-
-type IntersectionToObj<T> = {
-  [P in keyof T]: T[P]
-}
-
-type Merge<F, S> = IntersectionToObj<Omit<F, keyof S> & S>
-interface MyParams {
-  des: string
-}
-type RouteRecordRawWrap = Merge<MyParams, RouteRecordRaw>
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
 const DomAttrsIndex = () => import('@/views/domAttrs/index.vue')
 const CssAttrsIndex = () => import('@/views/cssAttrs/index.vue')
 
 // 配置路由信息
-const routes: Array<RouteRecordRawWrap> = [
+const routes: Array<RouteRecordRaw> = [
   { path: '/login', des: '登录', component: () => import('@/views/login/index.vue') },
   { path: '/store', des: 'store', component: () => import('@/views/store/index.vue') },
   {

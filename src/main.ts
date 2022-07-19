@@ -9,5 +9,11 @@ import 'animate.css'
 // 单独引入 ElMessage 和 ElMessageBox 的样式
 import 'element-plus/theme-chalk/el-message.css'
 import 'element-plus/theme-chalk/el-message-box.css'
+// 指令文件
+import directives from '@/directives'
 
-createApp(App).use(store).use(router).mount('#app')
+const app = createApp(App)
+
+app.use(store).use(router).use(directives)
+
+app.mount('#app')

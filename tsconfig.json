@@ -33,11 +33,17 @@
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/types/*.d.ts"
   ],
   "references": [
     {
       "path": "./tsconfig.node.json"
     }
+  ],
+  "typeRoots": [
+    "./node_modules/vue/types",
+    "./node_modules/@types",
+    "@/types"
   ]
 }

@@ -59,13 +59,13 @@ export default {
 
 <style lang="scss" scoped>
 .test-shape-outside {
-  width: 700px;
   margin: 50px auto 0;
+  width: 700px;
 }
 .image {
+  margin: 20px;
   width: 100px;
   height: 100px;
-  margin: 20px;
 }
 .test1 {
   .test1_image {
@@ -75,20 +75,20 @@ export default {
 }
 .test2 {
   height: 300px;
-  background-color: #eee;
+  background-color: #eeeeee;
   .content {
     position: relative;
     z-index: 0;
     &::before {
-      content: '';
       position: absolute;
-      left: 50px;
-      right: 0px;
       top: 0;
+      right: 0;
       bottom: 0;
-      background: #fff;
+      left: 50px;
       z-index: -1;
-      border: 1px solid #223;
+      border: 1px solid #222233;
+      background: #ffffff;
+      content: "";
       transform: skew(-23deg, 0deg);
     }
   }

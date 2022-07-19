@@ -25,4 +25,8 @@ onMounted(() => {
   console.log('on')
 })
 </script>
-<style scoped></style>
+<style scoped>
+input[type='text'] {
+  border: 1px solid red;
+}
+</style>

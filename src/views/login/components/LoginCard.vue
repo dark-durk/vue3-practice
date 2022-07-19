@@ -13,22 +13,19 @@
         class="cursor-pointer transition-all duration-300"
         :class="curTabs === 'login' ? 'font-semibold text-blue-500' : ''"
         @click="curTabs = 'login'"
-        >密码登录</span
       >
+        密码登录
+      </span>
       <span
         class="cursor-pointer transition-all duration-300"
         :class="curTabs === 'register' ? 'font-semibold text-blue-500' : ''"
         @click="curTabs = 'register'"
-        >验证码登录</span
       >
+        验证码登录
+      </span>
     </div>
     <div class="main">
-      <el-form
-        v-if="curTabs === 'login'"
-        ref="formRef"
-        :model="loginForm"
-        label-width="0"
-      >
+      <el-form v-if="curTabs === 'login'" ref="formRef" :model="loginForm" label-width="0">
         <TransitionGroup
           appear
           mode="out-in"
@@ -42,26 +39,18 @@
               <template #prepend>
                 <span class="w-11 text-center inline-block">用户名</span>
               </template>
-            </el-input></el-form-item
-          >
+            </el-input>
+          </el-form-item>
 
           <el-form-item v-if="curTabs === 'login'" :data-delay="2">
-            <el-input
-              v-model="loginForm.username"
-              placeholder="请输入密码"
-              type="password"
-            >
+            <el-input v-model="loginForm.username" placeholder="请输入密码" type="password">
               <template #prepend>
-                <span class="w-11 text-center inline-block"
-                  >密码</span
-                ></template
-              >
+                <span class="w-11 text-center inline-block">密码</span>
+              </template>
             </el-input>
           </el-form-item>
           <el-form-item v-if="curTabs === 'login'" :data-delay="3">
-            <el-button type="primary" class="w-full" size="default"
-              >登录</el-button
-            >
+            <el-button type="primary" class="w-full" size="default">登录</el-button>
           </el-form-item>
         </TransitionGroup>
       </el-form>
@@ -74,17 +63,13 @@
           @enter="enter"
           @leave="leave"
         >
-          <el-form-item
-            v-if="curTabs === 'register'"
-            class="mt-2"
-            :data-delay="1"
-          >
-            <el-input v-model="loginForm.phone" placeholder="请输入手机号">
+          <el-form-item v-if="curTabs === 'register'" class="mt-2" :data-delay="1">
+            <el-input v-model="loginForm.phone" v-inputNumber="3" placeholder="请输入手机号">
               <template #prepend>
                 <span class="w-11 text-center inline-block">手机号</span>
               </template>
-            </el-input></el-form-item
-          >
+            </el-input>
+          </el-form-item>
 
           <el-form-item v-if="curTabs === 'register'" :data-delay="2">
             <el-input
@@ -94,17 +79,13 @@
               type="password"
             >
               <template #prepend>
-                <span class="w-11 text-center inline-block"
-                  >验证码</span
-                ></template
-              >
+                <span class="w-11 text-center inline-block">验证码</span>
+              </template>
             </el-input>
             <el-button type="primary" size="default">发送验证码</el-button>
           </el-form-item>
           <el-form-item v-if="curTabs === 'register'" :data-delay="3">
-            <el-button type="primary" class="w-full" size="default"
-              >登录</el-button
-            >
+            <el-button type="primary" class="w-full" size="default">登录</el-button>
           </el-form-item>
         </TransitionGroup>
       </el-form>

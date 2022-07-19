@@ -143,5 +143,8 @@ module.exports = defineConfig({
         ignoreReadBeforeAssign: false,
       },
     ],
+    // 关闭空函数报错
+    'no-empty-function': ['error', { allow: ['functions', 'arrowFunctions'] }],
+    '@typescript-eslint/no-empty-function': ['off'],
   },
 })

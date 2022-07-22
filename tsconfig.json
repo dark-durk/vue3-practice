@@ -16,6 +16,8 @@
     "types": [
       "element-plus/global"
     ],
+    "typeRoots": ["./node_modules/vue/types", "./node_modules/@types", "./types","./src/types"],
+
     // 用于设置解析非相对模块名称的基本目录，相对模块不会受到baseUrl的影响
     "baseUrl": ".",
     "paths": {
@@ -41,9 +43,14 @@
       "path": "./tsconfig.node.json"
     }
   ],
-  "typeRoots": [
-    "./node_modules/vue/types",
-    "./node_modules/@types",
-    "@/types"
-  ]
 }
+
+/*
+ TypeScript 会默认引入node_modules下的所有@types声明
+1.typeRoots 是 tsconfig 中 compilerOptions 的一个配置项，typeRoots 下面的包会被 ts 编译器自动包含进来，typeRoots 默认指向 node_modules/@types。
+
+2.types 和 typeRoots 一样也是 compilerOptions 的配置，指定 types 后，typeRoots 下只有被指定的包才会被引入。
+
+3.@types 是 npm 的 scope 命名空间，和@babel 类似，@types 下的所有包会默认被引入，你可以通过修改 compilerOptions 来修改默认策略。
+
+*/

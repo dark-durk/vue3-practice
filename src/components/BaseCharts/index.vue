@@ -1,6 +1,5 @@
-
 <template>
-  <div @resize="resize" class="charts" ref="chartsRef"></div>
+  <div ref="chartsRef" class="charts" @resize="resize"></div>
 </template>
 
 <script lang="ts" setup>
@@ -25,9 +24,9 @@ watch(
     deep: true,
   },
 )
-let observer = new ResizeObserver(callback)
-let timeout:any = 0
-function callback () {
+const observer = new ResizeObserver(callback)
+let timeout: any = 0
+function callback() {
   timeout && clearTimeout(timeout)
   timeout = setTimeout(() => {
     chart && chart.resize()

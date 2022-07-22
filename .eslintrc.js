@@ -32,8 +32,10 @@ module.exports = defineConfig({
   },
 
   // https://eslint.bootcss.com/docs/user-guide/configuring#specifying-globals
-
-  globals: {},
+  // 避免  no-undef报错
+  globals: {
+    Nullable: 'readonly',
+  },
 
   extends: [
     'plugin:vue/vue3-recommended',

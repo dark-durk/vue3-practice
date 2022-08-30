@@ -5,12 +5,14 @@
 
 import { App, Directive } from 'vue'
 import inputNumber from './input/inputNumber'
+import hideTips from './hideTips'
 
 interface IDirective {
   [propName: string]: Directive
 }
 const directiveList: IDirective = {
   inputNumber,
+  hideTips,
 }
 
 const directives = {

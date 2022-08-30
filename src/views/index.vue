@@ -38,20 +38,24 @@ export default {
 <style lang="scss" scoped>
 .router-nav {
   .module {
+    position: relative;
     display: inline-block;
     margin: 5px 10px;
-    position: relative;
   }
   .module-children {
-    display: none;
     position: absolute;
     top: 20px;
     left: 0;
+    z-index: 999;
+    display: none;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
     white-space: nowrap;
-    padding-bottom: 10px;
-    z-index:999;
+    color: #eeeeee;
+    background-color: rgb(20 190 23 / 70%);
   }
-  .module-name:hover {
+  .module:hover {
     .module-children {
       display: block;
     }
